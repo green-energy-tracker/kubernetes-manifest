@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-connect-pod
+  namespace: green-energy-tracker
+  labels:
+    app: kafka-connect
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-connect
+  template:
+    metadata:
+      labels:
+        app: kafka-connect
+    spec:
+      initContainers:
+        - name: install-jdbc-plugin
+          image: confluentinc/cp-kafka-connect:latest
+          command:
+            - sh
+            - -c
+            - >
+              confluent-hub install --no-prompt
+              confluentinc/kafka-connect-jdbc:10.1.1
+              --component-dir /usr/share/confluent-hub-components
+          volumeMounts:
+            - name: plugin-volume
+              mountPath: /usr/share/confluent-hub-components
+
+      containers:
+        - name: kafka-connect
+          image: confluentinc/cp-kafka-connect:latest
+          envFrom:
+            - configMapRef:
+                name: kafka-connect-config
+            - secretRef:
+                name: postgres-secret
+          ports:
+            - containerPort: 8083
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+          volumeMounts:
+            - name: plugin-volume
+              mountPath: /usr/share/confluent-hub-components
+
+      volumes:
+        - name: plugin-volume
+          emptyDir: {}
