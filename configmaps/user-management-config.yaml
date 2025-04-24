@@ -15,4 +15,4 @@ data:
   SPRING_KAFKA_TOPIC_USER_EVENTS: user-events
   SPRING_KAFKA_TOPIC_USER_EVENTS_DLQ: user-events-dlq
   SPRING_SERVER_PORT: '3000'
-  MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,metrics,refresh,env,configprops,resilience4j"
+  SPRING_MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,metrics,refresh,env,configprops,resilience4j"
