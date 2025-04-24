@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postgres-create-schemas-job
+  namespace: green-energy-tracker
+spec:
+  template:
+    spec:
+      containers:
+        - name: psql
+          image: postgres:15
+          command: ["psql"]
+          args:
+            [
+              "-h", "postgres-service", "-U", "$(POSTGRES_USER)", "-d", "yourdb",
+              "-c", "CREATE SCHEMA IF NOT EXISTS user_management;"
+            ]
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_USER
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+      restartPolicy: OnFailure
