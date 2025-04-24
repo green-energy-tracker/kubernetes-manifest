@@ -1,0 +1,35 @@
+controller:
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+    hostName: green-energy-tracker.jenkins
+    path: /
+    pathType: Prefix
+
+  serviceType: ClusterIP
+
+  admin:
+    user: admin
+    password: admin
+
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "512Mi"
+    limits:
+      cpu: "1"
+      memory: "1Gi"
+
+  installPlugins:
+    - kubernetes
+    - workflow-aggregator
+    - git
+    - configuration-as-code
+    - github
+    - blueocean
+
+persistence:
+  enabled: true
+  size: 8Gi

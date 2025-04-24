@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sonarqube-config
+  namespace: green-energy-tracker
+data:
+  SONAR_JDBC_URL: jdbc:postgresql://postgres-service:5432/green-energy-tracker

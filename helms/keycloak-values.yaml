@@ -1,0 +1,41 @@
+auth:
+  adminUser: admin
+  adminPassword: admin
+
+proxy: edge
+
+extraEnvVars:
+  - name: KEYCLOAK_FRONTEND_URL
+    value: "https://green-energy-tracker.keycloak/"
+
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  hostname: green-energy-tracker.keycloak
+  path: /
+  pathType: Prefix
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+
+service:
+  type: ClusterIP
+
+resources:
+  requests:
+    cpu: "500m"
+    memory: "512Mi"
+  limits:
+    cpu: "1"
+    memory: "1Gi"
+
+postgresql:
+  enabled: false
+
+externalDatabase:
+  host: postgres-service
+  port: 5432
+  user: spring-training_user
+  password: spring-training
+  database: green-energy-tracker
