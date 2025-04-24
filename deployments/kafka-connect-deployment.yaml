@@ -23,7 +23,7 @@ spec:
             - -c
             - >
               confluent-hub install --no-prompt
-              confluentinc/kafka-connect-jdbc:10.1.1
+              confluentinc/kafka-connect-jdbc:latest
               --component-dir /usr/share/confluent-hub-components
           volumeMounts:
             - name: plugin-volume

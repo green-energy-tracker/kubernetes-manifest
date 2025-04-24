@@ -1,0 +1,31 @@
+{
+  "name": "keycloak_admin_event_entity_connector",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "tasks.max": "1",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "errors.retry.timeout": "60000",
+    "errors.retry.delay.max.ms": "300000",
+    "errors.tolerance": "none",
+    "errors.log.enable": "true",
+    "errors.log.include.messages": "true",
+    "connection.url": "jdbc:postgresql://postgres-service.green-energy-tracker:5432/green-energy-tracker",
+    "connection.user": "spring-training_user",
+    "connection.password": "spring-training",
+    "connection.attempts": "3",
+    "connection.backoff.ms": "1000",
+    "table.whitelist": "",
+    "schema.pattern": "public",
+    "mode": "incrementing",
+    "incrementing.column.name": "id_event",
+    "query": "SELECT * FROM (SELECT row_number() OVER (ORDER BY admin_event_time) AS id_event, * FROM public.admin_event_entity WHERE admin_event_time IS NOT NULL) AS t",
+    "poll.interval.ms": "60000",
+    "topic.prefix": "keycloak_admin_events",
+    "key.converter.schemas.enable": "false",
+    "value.converter.schemas.enable": "false",
+    "topic.creation.default.partitions": "1",
+    "topic.creation.default.replication.factor": "1",
+    "topic.creation.enable": "true"
+  }
+}
