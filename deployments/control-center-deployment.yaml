@@ -21,4 +21,11 @@ spec:
           envFrom:
             - configMapRef:
                 name: control-center-config
+          resources:
+            requests:
+              memory: "2Gi"
+              cpu: "2"
+            limits:
+              memory: "4Gi"
+              cpu: "2"
   restartPolicy: Always

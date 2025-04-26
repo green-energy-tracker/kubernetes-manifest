@@ -1,0 +1,3 @@
+helm repo add sonatype https://sonatype.github.io/nexus-helm/
+helm repo update
+helm repo update
