@@ -28,10 +28,10 @@ spec:
               mountPath: /opt/sonarqube/data
           resources:
             requests:
-              memory: "2Gi"
+              memory: "1.5Gi"
               cpu: "1"
             limits:
-              memory: "4Gi"
+              memory: "2Gi"
               cpu: "2"
       volumes:
         - name: sonarqube-data
