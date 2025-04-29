@@ -8,7 +8,9 @@ spec:
   selector:
     app: nexus
   ports:
-    - port: 8081
-      targetPort: http
-      protocol: TCP
-      name: http
+    - name: http
+      port: 8081
+      targetPort: 8081
+    - name: registry
+      port: 5000
+      targetPort: 5000
