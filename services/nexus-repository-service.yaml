@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexus-repository
+  namespace: nexus
+spec:
+  type: ClusterIP
+  selector:
+    app: nexus
+  ports:
+    - name: repository
+      port: 64395
+      targetPort: 64395
