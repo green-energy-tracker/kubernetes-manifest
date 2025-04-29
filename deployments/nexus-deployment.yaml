@@ -29,6 +29,8 @@ spec:
           ports:
             - containerPort: 8081
               name: http
+            - containerPort: 5000
+              name: registry
           env:
             - name: INSTALL4J_ADD_VM_PARAMS
               value: |
