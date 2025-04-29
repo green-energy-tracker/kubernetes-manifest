@@ -29,11 +29,11 @@ spec:
               mountPath: /var/lib/kafka/data
           resources:
             requests:
-              memory: "1Gi"
-              cpu: "0.5"
+              memory: "512Mi"
+              cpu: "512m"
             limits:
-              memory: "1.5Gi"
-              cpu: "1"
+              memory: "1Gi"
+              cpu: "512m"
       volumes:
         - name: data-volume
           emptyDir: {}

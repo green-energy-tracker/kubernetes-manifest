@@ -23,9 +23,9 @@ spec:
                 name: control-center-config
           resources:
             requests:
-              memory: "1Gi"
-              cpu: "1"
+              memory: "512Mi"
+              cpu: "512m"
             limits:
-              memory: "1.5Gi"
-              cpu: "1"
+              memory: "1Gi"
+              cpu: "512m"
   restartPolicy: Always

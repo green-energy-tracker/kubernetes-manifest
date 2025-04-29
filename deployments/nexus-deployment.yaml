@@ -1,3 +1,4 @@
+# kubernetes/nexus/deployment-nexus.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,7 +24,7 @@ spec:
         fsGroup: 200
       containers:
         - name: nexus
-          image: sonatype/nexus3:3.68.1
+          image: sonatype/nexus3:3.67.1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8081
@@ -43,7 +44,7 @@ spec:
             httpGet:
               path: /service/rest/v1/status
               port: http
-            initialDelaySeconds: 60
+            initialDelaySeconds: 120
             periodSeconds: 30
             timeoutSeconds: 5
             failureThreshold: 3
@@ -57,11 +58,11 @@ spec:
             failureThreshold: 3
           resources:
             requests:
-              cpu: "500m"
-              memory: "1Gi"
-            limits:
               cpu: "1"
-              memory: "1.2Gi"
+              memory: "1.5Gi"
+            limits:
+              cpu: "1.5"
+              memory: "2Gi"
           volumeMounts:
             - name: nexus-data
               mountPath: /nexus-data

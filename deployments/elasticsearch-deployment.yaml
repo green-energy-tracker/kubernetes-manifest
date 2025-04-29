@@ -29,11 +29,11 @@ spec:
               mountPath: /usr/share/elasticsearch/data
           resources:
             requests:
-              memory: "1Gi"
-              cpu: "1"
+              memory: "512Mi"
+              cpu: "512m"
             limits:
               memory: "1Gi"
-              cpu: "1"
+              cpu: "512m"
       volumes:
         - name: es-data
           persistentVolumeClaim:
