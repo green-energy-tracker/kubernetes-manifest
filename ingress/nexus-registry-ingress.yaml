@@ -1,20 +1,20 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nexus-dashboard-ingress
+  name: nexus-registry-ingress
   namespace: nexus
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   ingressClassName: nginx
   rules:
-    - host: nexus-dashboard.local
+    - host: nexus-registry.local
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: nexus-dashboard
+                name: nexus-registry
                 port:
-                  number: 8081
+                  number: 64395
