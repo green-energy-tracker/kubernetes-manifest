@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers>
+        <server>
+            <id>nexus-registry</id>
+            <username>${env.NEXUS_USERNAME}</username>
+            <password>${env.NEXUS_PASSWORD}</password>
+        </server>
+    </servers>
+
+    <mirrors>
+        <mirror>
+            <id>nexus-public</id>
+            <name>Nexus Public Group</name>
+            <url>http://nexus-repository.nexus.svc.cluster.local:8081/repository/maven-public/</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors>
+
+    <profiles>
+        <!-- Profilo per tutte le proprietà condivise del progetto Green Energy Tracker -->
+        <profile>
+            <id>green-energy</id>
+            <properties>
+                <!-- URL dei registry e repository -->
+                <registryUrl>nexus-registry.nexus.svc.cluster.local:64395</registryUrl>
+                <repositoryUrl>nexus-repository.nexus.svc.cluster.local:8081</repositoryUrl>
+
+                <!-- Versioni dei plugin -->
+                <jibMavenPluginVersion>3.4.1</jibMavenPluginVersion>
+                <imageJibVersion>openjdk:17-jdk-slim</imageJibVersion>
+
+                <!-- Versioni delle dipendenze comuni -->
+                <spring-cloud.version>2024.0.1</spring-cloud.version>
+                <openApiVersion>2.7.0</openApiVersion>
+                <swaggerVersion>2.2.13</swaggerVersion>
+                <avroSchemaVersion>7.3.0</avroSchemaVersion>
+                <avroVersion>1.12.0</avroVersion>
+                <modelMapperVersion>3.0.0</modelMapperVersion>
+                <avroPluginVersion>1.10.2</avroPluginVersion>
+            </properties>
+        </profile>
+
+        <!-- Profilo per permettere HTTP nei mirror -->
+        <profile>
+            <id>allow-insecure-http</id>
+            <properties>
+                <wagon.http.blockedMirrors>!*</wagon.http.blockedMirrors>
+            </properties>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>green-energy</activeProfile>
+        <activeProfile>allow-insecure-http</activeProfile>
+    </activeProfiles>
+</settings>
