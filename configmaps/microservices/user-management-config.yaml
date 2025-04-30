@@ -19,3 +19,5 @@ data:
   SPRING_JPA_SHOW_SQL: 'false'
   SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: 'true'
   SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: user_management
+  SPRING_NEXUS_REPOSITORY_URL: nexus-repository.nexus.svc.cluster.local:8081
+  SPRING_NEXUS_REGISTRY_URL: nexus-registry.nexus.svc.cluster.local:64395
