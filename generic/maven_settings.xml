@@ -27,12 +27,7 @@
             <id>green-energy</id>
             <properties>
                 <!-- URL dei registry e repository -->
-                <registryUrl>nexus-registry.nexus.svc.cluster.local:64395</registryUrl>
                 <repositoryUrl>nexus-repository.nexus.svc.cluster.local:8081</repositoryUrl>
-
-                <!-- Versioni dei plugin -->
-                <jibMavenPluginVersion>3.4.1</jibMavenPluginVersion>
-                <imageJibVersion>openjdk:17-jdk-slim</imageJibVersion>
 
                 <!-- Versioni delle dipendenze comuni -->
                 <spring-cloud.version>2024.0.1</spring-cloud.version>
