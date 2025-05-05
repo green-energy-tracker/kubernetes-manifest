@@ -63,7 +63,7 @@ spec:
               cpu: "500m"
               memory: "2Gi"
             limits:
-              cpu: "500m"
+              cpu: "1"
               memory: "2.5Gi"
           volumeMounts:
             - name: nexus-data
