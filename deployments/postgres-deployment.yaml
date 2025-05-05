@@ -31,7 +31,7 @@ spec:
               memory: "1Gi"
               cpu: "500m"
             limits:
-              memory: "1.5Gi"
+              memory: "1Gi"
               cpu: "1"
       volumes:
         - name: postgres-storage
