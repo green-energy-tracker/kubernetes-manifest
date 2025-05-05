@@ -1,0 +1,1 @@
+helm install jenkins jenkins/jenkins -f green-energy-tracker/jenkins-values.yaml -n green-energy-tracker
