@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers>
+        <server>
+            <id>nexus-public</id>
+            <username>${env.NEXUS_USERNAME}</username>
+            <password>${env.NEXUS_PASSWORD}</password>
+        </server>
+    </servers>
+
+    <mirrors>
+        <mirror>
+            <id>nexus-public</id>
+            <name>Nexus Public Group</name>
+            <url>http://nexus-repository.local/repository/maven-public/</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors>
+
+    <profiles>
+        <!-- Profilo per tutte le proprietà condivise del progetto Green Energy Tracker -->
+        <profile>
+            <id>green-energy</id>
+            <properties>
+                <spring-cloud.version>2024.0.1</spring-cloud.version>
+                <openApiVersion>2.7.0</openApiVersion>
+                <swaggerVersion>2.2.13</swaggerVersion>
+                <avroSchemaVersion>7.3.0</avroSchemaVersion>
+                <avroVersion>1.12.0</avroVersion>
+                <modelMapperVersion>3.0.0</modelMapperVersion>
+                <avroPluginVersion>1.10.2</avroPluginVersion>
+                <schemaRegistryPluginVersion>7.8.0</schemaRegistryPluginVersion>
+                <schemaRegistryUrl>http://green.energy.tracker.schema-registry</schemaRegistryUrl>
+                <repositoryUrl>http://nexus-repository.local</repositoryUrl>
+                <registryUrl>http://nexus-registry.local</registryUrl>
+            </properties>
+        </profile>
+
+        <!-- Profilo per permettere HTTP nei mirror -->
+        <profile>
+            <id>allow-insecure-http</id>
+            <properties>
+                <wagon.http.blockedMirrors>!*</wagon.http.blockedMirrors>
+            </properties>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>green-energy</activeProfile>
+        <activeProfile>allow-insecure-http</activeProfile>
+    </activeProfiles>
+</settings>
