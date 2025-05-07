@@ -31,6 +31,7 @@
                 <swaggerVersion>2.2.13</swaggerVersion>
                 <avroSchemaVersion>7.3.0</avroSchemaVersion>
                 <avroVersion>1.12.0</avroVersion>
+                <avroSerdeVersion>7.6.2</avroSerdeVersion>
                 <modelMapperVersion>3.0.0</modelMapperVersion>
                 <avroPluginVersion>1.10.2</avroPluginVersion>
                 <schemaRegistryPluginVersion>7.8.0</schemaRegistryPluginVersion>
