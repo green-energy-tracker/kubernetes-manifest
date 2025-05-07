@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgres-pod
+  name: postgres
   namespace: green-energy-tracker
 spec:
   replicas: 1

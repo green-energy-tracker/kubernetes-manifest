@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sonarqube-pod
+  name: sonarqube
   namespace: green-energy-tracker
 spec:
   replicas: 1

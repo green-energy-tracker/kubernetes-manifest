@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: elasticsearch-pod
+  name: elasticsearch
   namespace: green-energy-tracker
 spec:
   replicas: 1

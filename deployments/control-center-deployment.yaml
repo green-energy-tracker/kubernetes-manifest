@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: control-center-pod
+  name: control-center
   namespace: green-energy-tracker
 spec:
   replicas: 1
