@@ -12,7 +12,7 @@ spec:
           command: ["psql"]
           args:
             [
-              "-h", "postgres-service", "-U", "$(POSTGRES_USER)", "-d", "yourdb",
+              "-h", "postgres-service", "-U", "$(POSTGRES_USER)", "-d", "green-energy-tracker",
               "-c", "CREATE SCHEMA IF NOT EXISTS user_management;"
             ]
           env:
