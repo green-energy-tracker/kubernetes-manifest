@@ -33,6 +33,7 @@
                 <avroSerdeVersion>7.6.2</avroSerdeVersion>
                 <modelMapperVersion>3.0.0</modelMapperVersion>
                 <avroPluginVersion>1.10.2</avroPluginVersion>
+                <avroSchemaVersion>7.3.0</avroSchemaVersion>
                 <schemaRegistryPluginVersion>7.8.0</schemaRegistryPluginVersion>
                 <schemaRegistryUrl>http://green.energy.tracker.schema-registry</schemaRegistryUrl>
                 <repositoryUrl>http://nexus-repository.local</repositoryUrl>
