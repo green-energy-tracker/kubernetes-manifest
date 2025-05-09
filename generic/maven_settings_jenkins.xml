@@ -35,6 +35,7 @@
                 <avroPluginVersion>1.10.2</avroPluginVersion>
                 <avroSchemaVersion>7.3.0</avroSchemaVersion>
                 <schemaRegistryPluginVersion>7.8.0</schemaRegistryPluginVersion>
+                <jackDataFormAvroVersion>2.13.0</jackDataFormAvroVersion>
                 <schemaRegistryUrl>http://schema-registry-service:8085</schemaRegistryUrl>
                 <repositoryUrl>nexus-repository.nexus.svc.cluster.local:8081</repositoryUrl>
                 <registryUrl>nexus-registry.nexus.svc.cluster.local:64395</registryUrl>
