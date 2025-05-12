@@ -4,8 +4,8 @@
     "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
     "tasks.max": "1",
     "key.converter": "org.apache.kafka.connect.storage.StringConverter",
-    "value.converter": "io.confluent.connect.avro.AvroConverter",
-    "value.converter.schema.registry.url": "http://schema-registry-service:8085",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false",
     "errors.retry.timeout": "60000",
     "errors.retry.delay.max.ms": "300000",
     "errors.tolerance": "none",
@@ -26,12 +26,10 @@
     "topic.creation.default.partitions": "1",
     "topic.creation.default.replication.factor": "1",
     "topic.creation.enable": "true",
-    "transforms": "SetValueSchemaMetadata,MakeKey,ExtractKeyField",
+    "transforms": "MakeKey,ExtractKeyField",
     "transforms.MakeKey.type": "org.apache.kafka.connect.transforms.ValueToKey",
     "transforms.MakeKey.fields": "id",
     "transforms.ExtractKeyField.type": "org.apache.kafka.connect.transforms.ExtractField$Key",
-    "transforms.ExtractKeyField.field": "id",
-    "transforms.SetValueSchemaMetadata.type": "org.apache.kafka.connect.transforms.SetSchemaMetadata$Value",
-    "transforms.SetValueSchemaMetadata.schema.name": "com.green.energy.tracker.configuration.domain.event.KeycloakAdminEventDto"
+    "transforms.ExtractKeyField.field": "id"
   }
 }
