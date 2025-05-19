@@ -7,6 +7,10 @@ data:
   SPRING_APPLICATION_NAME: user-management
   SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
   SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-service:5432/green-energy-tracker
+  SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  SPRING_JPA_SHOW_SQL: 'false'
+  SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: 'true'
+  SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: microservices
   SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka-service:9092
   SPRING_KAFKA_PROPERTIES_SCHEMA_REGISTRY_CACHE_CAPACITY: '1000'
   SPRING_KAFKA_PROPERTIES_SCHEMA_REGISTRY_URL: http://schema-registry-service:8085
@@ -17,7 +21,7 @@ data:
   SPRING_KAFKA_PRODUCER_AVRO_KEY_SERIALIZER: org.apache.kafka.common.serialization.StringSerializer
   SPRING_KAFKA_PRODUCER_AVRO_VALUE_SERIALIZER: io.confluent.kafka.serializers.KafkaAvroSerializer
   SPRING_KAFKA_PRODUCER_DLT_KEY_SERIALIZER: org.apache.kafka.common.serialization.StringSerializer
-  SPRING_KAFKA_PRODUCER_DLT_VALUE_SERIALIZER: org.apache.kafka.common.serialization.StringSerializer
+  SPRING_KAFKA_PRODUCER_DLT_VALUE_SERIALIZER: org.springframework.kafka.support.serializer.JsonSerializer
   SPRING_KAFKA_CONSUMER_KEY_DESERIALIZER: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
   SPRING_KAFKA_CONSUMER_VALUE_DESERIALIZER: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
   SPRING_KAFKA_CONSUMER_PROPERTIES_SPRING_DESERIALIZER_KEY_DELEGATE_CLASS: org.apache.kafka.common.serialization.StringDeserializer
@@ -26,9 +30,5 @@ data:
   SPRING_KAFKA_CONSUMER_PROPERTIES_SPRING_JSON_VALUE_DEFAULT_TYPE: "com.green.energy.tracker.user_management.keycloak.KeycloakEvent"
   SPRING_SERVER_PORT: '3000'
   SPRING_MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health"
-  SPRING_JPA_HIBERNATE_DDL_AUTO: update
-  SPRING_JPA_SHOW_SQL: 'false'
-  SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: 'true'
-  SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: user_management
   SPRING_NEXUS_REPOSITORY_URL: nexus-repository.nexus.svc.cluster.local:8081
   SPRING_NEXUS_REGISTRY_URL: nexus-registry.nexus.svc.cluster.local:64395

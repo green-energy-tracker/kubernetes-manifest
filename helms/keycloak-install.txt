@@ -1,1 +1,2 @@
 helm install keycloak bitnami/keycloak -n green-energy-tracker -f green-energy-tracker/keycloak-values.yaml
+helm uninstall keycloak -n green-energy-tracker

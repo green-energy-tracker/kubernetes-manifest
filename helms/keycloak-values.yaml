@@ -7,6 +7,8 @@ proxy: edge
 extraEnvVars:
   - name: KEYCLOAK_FRONTEND_URL
     value: "https://green-energy-tracker.keycloak/"
+  - name: DB_SCHEMA
+    value: "keycloak"
 
 ingress:
   enabled: true

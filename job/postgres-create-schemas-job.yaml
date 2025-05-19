@@ -13,7 +13,7 @@ spec:
           args:
             [
               "-h", "postgres-service", "-U", "$(POSTGRES_USER)", "-d", "green-energy-tracker",
-              "-c", "CREATE SCHEMA IF NOT EXISTS user_management;"
+              "-c", "CREATE SCHEMA IF NOT EXISTS microservices;CREATE SCHEMA IF NOT EXISTS sonarqube;CREATE SCHEMA IF NOT EXISTS keycloak;"
             ]
           env:
             - name: POSTGRES_USER
