@@ -38,6 +38,8 @@
                 <jackDataFormAvroVersion>2.13.0</jackDataFormAvroVersion>
                 <jacocoPluginVersion>0.8.8</jacocoPluginVersion>
                 <sonarPluginVersion>3.9.1.2184</sonarPluginVersion>
+                <logback-json-classic.version>0.1.5</logback-json-classic.version>
+                <logback-jackson.version>0.1.5</logback-jackson.version>
                 <schemaRegistryUrl>http://green.energy.tracker.schema-registry</schemaRegistryUrl>
                 <repositoryUrl>http://nexus-repository.local</repositoryUrl>
                 <registryUrl>http://nexus-registry.local</registryUrl>

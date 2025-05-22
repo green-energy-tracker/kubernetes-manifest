@@ -38,6 +38,8 @@
                 <jackDataFormAvroVersion>2.13.0</jackDataFormAvroVersion>
                 <jacocoPluginVersion>0.8.8</jacocoPluginVersion>
                 <sonarPluginVersion>3.9.1.2184</sonarPluginVersion>
+                <logback-json-classic.version>0.1.5</logback-json-classic.version>
+                <logback-jackson.version>0.1.5</logback-jackson.version>
                 <schemaRegistryUrl>http://schema-registry-service:8085</schemaRegistryUrl>
                 <repositoryUrl>nexus-repository.nexus.svc.cluster.local:8081</repositoryUrl>
                 <registryUrl>nexus-registry.nexus.svc.cluster.local:64395</registryUrl>
