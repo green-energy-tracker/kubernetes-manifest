@@ -22,7 +22,6 @@
     </mirrors>
 
     <profiles>
-        <!-- Profilo per tutte le proprietà condivise del progetto Green Energy Tracker -->
         <profile>
             <id>green-energy</id>
             <properties>
@@ -46,7 +45,6 @@
             </properties>
         </profile>
 
-        <!-- Profilo per permettere HTTP nei mirror -->
         <profile>
             <id>allow-insecure-http</id>
             <properties>
