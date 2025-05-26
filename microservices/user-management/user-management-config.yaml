@@ -29,6 +29,6 @@ data:
   SPRING_KAFKA_CONSUMER_PROPERTIES_SPRING_JSON_TRUSTED_PACKAGES: "com.green.energy.tracker.user_management.keycloak"
   SPRING_KAFKA_CONSUMER_PROPERTIES_SPRING_JSON_VALUE_DEFAULT_TYPE: "com.green.energy.tracker.user_management.keycloak.KeycloakEvent"
   SPRING_SERVER_PORT: '3000'
-  SPRING_MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health"
+  SPRING_MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,prometheus"
   SPRING_NEXUS_REPOSITORY_URL: nexus-repository.nexus.svc.cluster.local:8081
   SPRING_NEXUS_REGISTRY_URL: nexus-registry.nexus.svc.cluster.local:64395
