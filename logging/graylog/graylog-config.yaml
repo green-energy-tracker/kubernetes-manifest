@@ -6,6 +6,6 @@ metadata:
 data:
   GRAYLOG_PASSWORD_SECRET: graylogpassword2
   GRAYLOG_HTTP_EXTERNAL_URI: http://loggin.graylog:30000/
-  GRAYLOG_MONGODB_URI: mongodb://mongodb.logging:27017/graylog
+  GRAYLOG_MONGODB_URI: mongodb://mongodb-service.logging:27017/graylog
   GRAYLOG_ELASTICSEARCH_HOSTS: http://elasticsearch-service.logging:9200
   GRAYLOG_ROOT_PASSWORD_SHA2: dc53c4b732a64731f0aaacb441533915e059c570fd88cf7438b5c564e088635f
