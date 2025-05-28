@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graylog
+  namespace: logging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graylog
+  template:
+    metadata:
+      labels:
+        app: graylog
+    spec:
+      containers:
+        - name: graylog
+          image: graylog/graylog:5.1
+          envFrom:
+            - configMapRef:
+                name: graylog-config
+          ports:
+            - containerPort: 9000
+            - containerPort: 12201
