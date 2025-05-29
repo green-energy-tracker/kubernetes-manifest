@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: site-sensor-management-config
+  namespace: green-energy-tracker
+data:
+  SPRING_APPLICATION_NAME: site-sensor-management
+  SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-service:5432/green-energy-tracker
+  SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  SPRING_JPA_SHOW_SQL: 'false'
+  SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: 'true'
+  SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: microservices
+  SPRING_SERVER_PORT: '3001'
+  SPRING_MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,prometheus"
+  SPRING_NEXUS_REPOSITORY_URL: nexus-repository.nexus.svc.cluster.local:8081
+  SPRING_NEXUS_REGISTRY_URL: nexus-registry.nexus.svc.cluster.local:64395
+  GRAYLOG_HOST: graylog-service.logging.svc.cluster.local
+  GRAYLOG_PORT: '12201'
