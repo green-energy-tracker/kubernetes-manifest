@@ -15,7 +15,7 @@ data:
   SPRING_MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,prometheus"
   SPRING_NEXUS_REPOSITORY_URL: nexus-repository.nexus.svc.cluster.local:8081
   SPRING_NEXUS_REGISTRY_URL: nexus-registry.nexus.svc.cluster.local:64395
-  SPRING_CLIENT_USER_MANAGEMENT_URL: http://green-energy-tracker.user/api
+  SPRING_CLIENT_USER_MANAGEMENT_URL: http://user-management-service.green-energy-tracker:3000/api
   SPRING_CLIENT_USER_MANAGEMENT_VERSION: 'v1'
   GRAYLOG_HOST: graylog-service.logging.svc.cluster.local
   GRAYLOG_PORT: '12201'
