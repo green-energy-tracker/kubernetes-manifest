@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: insert-energy-data
+  namespace: green-energy-tracker
+spec:
+  schedule: "*/1 * * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      backoffLimit: 3
+      template:
+        spec:
+          containers:
+            - name: psql-job
+              image: postgres:16
+              envFrom:
+                - configMapRef:
+                    name: insert-energy-data-config
+                - secretRef:
+                    name: insert-energy-data-secret
+              command: ["/bin/sh", "-c"]
+              args:
+                - |
+                  echo "Connecting to $PGHOST:$PGPORT as $PGUSER on $PGDATABASE"
+                  echo "PostgreSQL version:"
+                  psql --version
+                  echo "Running insert_energy_data()..."
+                  psql "host=$PGHOST port=$PGPORT user=$PGUSER dbname=$PGDATABASE" \
+                       -c "SELECT microservices.insert_energy_data();"
+          restartPolicy: OnFailure
