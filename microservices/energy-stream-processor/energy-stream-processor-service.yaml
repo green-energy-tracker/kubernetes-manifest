@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: energy-stream-processor-service
+  labels:
+    app: energy-stream-processor
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/port: '3002'
+    prometheus.io/path: '/actuator/prometheus'
+spec:
+  selector:
+    app: energy-stream-processor
+  ports:
+    - name: http
+      protocol: TCP
+      port: 3002
+      targetPort: 3002
+  type: ClusterIP
