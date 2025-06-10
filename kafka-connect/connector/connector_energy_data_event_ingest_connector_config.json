@@ -1,5 +1,5 @@
 {
-  "name": "energy-data-ingest-connector",
+  "name": "energy-data-events-ingest-connector",
   "config": {
     "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
     "tasks.max": "1",

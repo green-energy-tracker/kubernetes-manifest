@@ -11,6 +11,8 @@ data:
   SPRING_NEXUS_REGISTRY_URL: nexus-registry.nexus.svc.cluster.local:64395
   SPRING_CLIENT_USER_MANAGEMENT_URL: http://user-management-service.green-energy-tracker:3000/api
   SPRING_CLIENT_USER_MANAGEMENT_VERSION: 'v1'
+  SPRING_CLIENT_SITE_SENSOR_MANAGEMENT_URL: http://site-sensor-management-service.green-energy-tracker:3001/api
+  SPRING_CLIENT_SITE_SENSOR_MANAGEMENT_VERSION: 'v1'
   SPRING_CLOUD_CIRCUIT_BREAKER_USER_SLIDING_WINDOW_SIZE: '10'
   SPRING_CLOUD_CIRCUIT_BREAKER_USER_FAILURE_RATE: '50'
   SPRING_CLOUD_CIRCUIT_BREAKER_USER_MIN_NUM_CALL: '4'
@@ -20,12 +22,8 @@ data:
   SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka-service:9092
   SPRING_KAFKA_PROPERTIES_SCHEMA_REGISTRY_CACHE_CAPACITY: '1000'
   SPRING_KAFKA_PROPERTIES_SCHEMA_REGISTRY_URL: http://schema-registry-service:8085
-  SPRING_KAFKA_TOPIC_SITE_EVENTS: site-events
-  SPRING_KAFKA_TOPIC_SITE_EVENTS_DLT: site-events-DLT
-  SPRING_KAFKA_TOPIC_SENSOR_EVENTS: sensor-events
-  SPRING_KAFKA_TOPIC_SENSOR_EVENTS_DLT: sensor-events-DLT
-  SPRING_KAFKA_PRODUCER_AVRO_KEY_SERIALIZER: org.apache.kafka.common.serialization.StringSerializer
-  SPRING_KAFKA_PRODUCER_AVRO_VALUE_SERIALIZER: io.confluent.kafka.serializers.KafkaAvroSerializer
+  SPRING_KAFKA_TOPIC_DATA_ENERGY_INGEST: energy_data
+  SPRING_KAFKA_TOPIC_DATA_ENERGY_EVENTS: energy-data-events
   SPRING_KAFKA_PRODUCER_DLT_KEY_SERIALIZER: org.apache.kafka.common.serialization.StringSerializer
   SPRING_KAFKA_PRODUCER_DLT_VALUE_SERIALIZER: org.springframework.kafka.support.serializer.JsonSerializer
   GRAYLOG_HOST: graylog-service.logging.svc.cluster.local
