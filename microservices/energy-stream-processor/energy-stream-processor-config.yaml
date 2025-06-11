@@ -24,6 +24,7 @@ data:
   SPRING_KAFKA_PROPERTIES_SCHEMA_REGISTRY_URL: http://schema-registry-service:8085
   SPRING_KAFKA_TOPIC_DATA_ENERGY_INGEST: energy_data
   SPRING_KAFKA_TOPIC_DATA_ENERGY_EVENTS: energy-data-events
+  SPRING_KAFKA_TOPIC_DATA_ENERGY_EVENTS_DLT: energy-data-events-DLT
   SPRING_KAFKA_PRODUCER_DLT_KEY_SERIALIZER: org.apache.kafka.common.serialization.StringSerializer
   SPRING_KAFKA_PRODUCER_DLT_VALUE_SERIALIZER: org.springframework.kafka.support.serializer.JsonSerializer
   GRAYLOG_HOST: graylog-service.logging.svc.cluster.local
